@@ -16,7 +16,7 @@ export const refreshApi = async () => {
         return Promise.reject(new Error('No refresh token available'));
     }
 
-    const base = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+    const base = import.meta.env.VITE_BACKEND_API_HOST || 'http://localhost:3000';
     const response = await axios.get(
         `${base}/auth/refresh`,
         {

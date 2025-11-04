@@ -9,9 +9,10 @@ export const setAuthToken = (token) => {
     console.log("apiClient: Đặt token trong bộ nhớ:", token);
     inMemoryAccessToken = token;
 };
+const API_HOST = import.meta.env.VITE_BACKEND_API_HOST ?? 'http://localhost:3000';
 
 const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000',
+    baseURL: API_HOST,
 });
 
 apiClient.interceptors.request.use(
